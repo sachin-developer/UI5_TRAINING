@@ -9,10 +9,42 @@
 	}">
 
 	<Page
-		title="{i18n>appTitle}"
 		id="page">
+		 <customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://home" press="onHome"></Button>
+				<ToolbarSpacer/>
+				<Title text="Products List " level="H1" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
 		<content>
-        <Text text="Proucts Here" ></Text>
+		<Panel headerText="Single Record Selection - Sap.M.List" stickyHeader="true">
+		 <OverflowToolbar id="infobar">
+			<SearchField id='idSearchProducts' search="onSearchProducts"/>
+		 </OverflowToolbar>
+        <List id="idProductsSingle" items="{products>/}" growingThreshold="5" growing="true" mode="SingleSelectMaster" selectionChange="onSelectRecord">
+		<items>
+			<ObjectListItem
+			title="{products>ProductName}"
+			number="{products>UnitPrice}"
+			numberUnit="{products>QuantityPerUnit}">
+			</ObjectListItem>
+		</items>
+		</List>
+		</Panel>
+		<Panel headerText="Multiple Record Selection - Sap.M.List" stickyHeader="true">
+		<Button text="Select Products" type="Emphasized" press="onMultipleProducts"></Button>
+		<List id="idProductsMultiple" items="{products>/}" growingThreshold="5" growing="true" mode="MultiSelect">
+		<items>
+			<ObjectListItem
+			title="{products>ProductName}"
+			number="{products>UnitPrice}"
+			numberUnit="{products>QuantityPerUnit}">
+			</ObjectListItem>
+		</items>
+		</List>
+		</Panel>
 		</content>
 	</Page>
 

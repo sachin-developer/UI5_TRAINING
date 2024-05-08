@@ -1,14 +1,14 @@
 [
     {
+        "name":"SDK",
+        "title":"SAPUI5 SDK"
+    },
+    {
         "name":"Products",
         "title":"Northwind Products List"
     },
     {
         "name":"Customers",
         "title":"Northwind Customers List"
-    },
-    {
-        "name":"Categories",
-        "title":"Northwind Categories List"
     }
 ]

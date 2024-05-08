@@ -11,9 +11,107 @@
 	<Page
 		title="{i18n>appTitle}"
 		id="page">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://home" press="onHome"></Button>
+				<ToolbarSpacer/>
+				<Title text="Customers List " level="H1" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
 		<content>
-        <Text text="Customers Here" ></Text>
-		</content>
+	<Panel headerText="Single Record Selection - Sap.M.Table" stickyHeader="true">
+	<Table id="idCustomersSingle"
+		inset="false"
+		mode="SingleSelectMaster"
+		selectionChange="onSingleCustomerSelect"
+		items="{customers>/}">
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Customer ID" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Company Name" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Contact Name" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="City" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="PostalCode" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Phone" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<Text text="{customers>CustomerID}"/>
+					<Text text="{customers>CompanyName}"/>
+					<Text text="{customers>ContactName}"/>
+					<Text text="{customers>City}"/>
+					<Text text="{customers>PostalCode}"/>
+					<Text text="{customers>Phone}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</Panel>
+	<Panel headerText="Multiple Record Selection - Sap.M.Table" stickyHeader="true">
+	<Button type="Emphasized" text="Select Customers" press="onMultipleCustomerSelect"></Button>
+	<Table id="idCustomersMultiple"
+		inset="false"
+		mode="MultiSelect"
+		items="{customers>/}">
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Customer ID" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Company Name" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Contact Name" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="City" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="PostalCode" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="Phone" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<Text text="{customers>CustomerID}"/>
+					<Text text="{customers>CompanyName}"/>
+					<Text text="{customers>ContactName}"/>
+					<Text text="{customers>City}"/>
+					<Text text="{customers>PostalCode}"/>
+					<Text text="{customers>Phone}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</Panel>
+	</content>
 	</Page>
-
 </mvc:View>
