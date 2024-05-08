@@ -1,0 +1,19 @@
+<mvc:View
+	controllerName="com.cnc.tng.controller.Products"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/cnc/tng/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle}"
+		id="page">
+		<content>
+        <Text text="Proucts Here" ></Text>
+		</content>
+	</Page>
+
+</mvc:View>

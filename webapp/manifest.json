@@ -9,7 +9,16 @@
 		"description": "{{appDescription}}",
 		"applicationVersion": {
 			"version": "${version}"
-		}
+		},
+		"dataSources":{
+            "Northwind":{
+                "uri":"/Northwind_Service/V3/Northwind/Northwind.svc/",
+                "type":"OData",
+                "settings":{
+                    "oDataVersion":"3.0"
+                }
+            }
+        }
 	},
 
 	"sap.ui": {
@@ -51,6 +60,10 @@
 				"settings": {
 					"bundleName": "com.cnc.tng.i18n.i18n"
 				}
+			},
+			"":{
+				"type":"sap.ui.model.odata.v2.ODataModel",
+				"dataSource": "Northwind"
 			}
 		},
 
@@ -68,12 +81,30 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},
+				{
+					"pattern": "Products",
+					"name": "Products",
+					"target": "Products"
+				},
+				{
+					"pattern": "Customers",
+					"name": "Customers",
+					"target": "Customers"
 				}
 			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
+				},
+				"Products": {
+					"viewId": "Products",
+					"viewName": "Products"
+				},
+				"Customers": {
+					"viewId": "Customers",
+					"viewName": "Customers"
 				}
 			}
 		}
